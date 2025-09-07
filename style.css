@@ -1,0 +1,158 @@
+/* Reset */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+    padding: 0 20px;
+}
+
+/* Navbar */
+nav {
+    background: #333;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+nav .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav .logo span {
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #00bcd4;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 30px 0;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 30px;
+    font-weight: 300;
+    color: #555;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+.hero-img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #00bcd4;
+}
+
+/* Sections */
+section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+#about {
+    text-align: center;
+}
+
+#about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 15px;
+    border: 3px solid #00bcd4;
+}
+
+#skills ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+#experience h3, #projects h3 {
+    margin-top: 15px;
+    color: #00bcd4;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea, button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+button {
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0097a7;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: #333;
+    color: #fff;
+    border-radius: 10px;
+}
+
+footer a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

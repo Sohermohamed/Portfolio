@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soher Mohamed - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      background: linear-gradient(to bottom, #000000, #3c2d64, #4b2a84);
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: black;
+      transition: all 0.3s ease;
+    }
+    .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  height: calc(100vh - 80px);
+  padding: 40px;
+  text-align: left; /* عشان النص يبقى على الشمال */
+  flex-direction: row; /* النص والصورة جنب بعض */
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+
+.hero-img img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.hero-img img:hover {
+  transform: scale(1.05);
+}
+
+
+    nav .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav .logo span {
+  display: inline;
+  font-weight: bold;
+  font-size: 20px;
+  color: #b76df0; 
+}
+
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      position: relative;
+      padding: 5px 0;
+      transition: color 0.3s ease;
+    }
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background: #b76df0;
+      transition: width 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #b76df0;
+    }
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav .btn {
+      background: linear-gradient(to right, #b76df0, #7d5dff);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .toggle-btn {
+      font-size: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+    .toggle-btn:hover {
+      transform: rotate(180deg);
+    }
+
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero h3.role {
+  font-size: 24px;
+  color: #b76df0; /* بنفسجي */
+  margin-bottom: 20px;
+}
+
+/* الأيقونات */
+.social-icons a {
+  font-size: 24px;
+  color: #b76df0; /* بنفسجي */
+  border: 2px solid #b76df0;
+  border-radius: 50%;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #b76df0;
+  color: white;
+}
+
+    .hero-img img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit:cover;
+      border: 4px solid white;
+    }
+
+    section {
+      padding: 60px 50px;
+      background-color: rgba(0, 0, 0, 0.048);
+      margin: 30px auto;
+      border-radius: 10px;
+      max-width: 1000px;
+      transition: all 0.3s ease;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color:#fff;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: black;
+      margin-top: 30px;
+      transition: all 0.3s ease;
+    }
+
+    footer a {
+      color: #b76df0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    /* Light Mode */
+    body.light-mode {
+      background: linear-gradient(to bottom, #f8f8f8, #eaeaea);
+      color: #222;
+    }
+    body.light-mode nav {
+      background-color: #fff;
+    }
+    body.light-mode nav ul li a {
+      color: #222;
+    }
+    body.light-mode footer {
+      background: #fff;
+      color: #222;
+    }
+    body.light-mode section {
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+   
+.intro-text {
+  color: white;
+}
+
+body.light-mode .intro-text
+{
+  color: black;
+}
+section h2 {
+  color: #b76df0;/* بنفسجي ثابت */
+}
+
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+h2 {
+  margin-bottom: 20px;
+  color: #b76df0; /* خليها بنفسجي بدل الأبيض */
+}
+
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.social-icons a {
+  font-size: 24px;
+  color:#b76df0;
+  border: 2px solid #b76df0;
+  border-radius: 50%;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background:#b76df0;
+  color: black;
+}
+
+.cv-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: linear-gradient(to right, #b76df0, #7d5dff);
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cv-btn:hover {
+  background: linear-gradient(to right, #7d5dff, #b76df0);
+  transform: scale(1.05);
+}
+/* الوضع العادي (دارك) */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #b76df0;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #b76df0;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* ✅ Light Mode */
+body.light-mode nav ul li a {
+  color: black; /* النص الأساسي أسود */
+}
+
+body.light-mode nav ul li a:hover {
+  color: #b76df0; /* نفس البنفسجي */
+}
+
+
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <nav>
+  <div class="logo">
+  Soher. <span>Dev</span>
+</div>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:15px;">
+      <button class="toggle-btn" id="toggleTheme">🌙</button>
+    </div>
+  </nav>
+
+  <section class="hero">
+  <div class="hero-text">
+  <h2 class="intro-text">Hello I'm</h2>
+  <h1>Soher Mohamed</h1>
+    <h3 class="role">Backend .NET Developer</h3>
+
+    <div class="social-icons">
+      <a href="https://github.com/Sohermohamed" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/soher-mohamed-968510268/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+    <a href="Soher_Mohamed_CV.pdf" download class="cv-btn">Download CV</a>
+  </div>
+
+  <div class="hero-img">
+    <img src="Soher.jpeg" alt="Soher Mohamed">
+  </div>
+</section>
+
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Hi, I'm <b>Soher Mohamed</b>, a Computer Science student at Modern Academy (Class of 2026), GPA 3.36 (Very Good with Honors).  
+    I’m passionate about <b>backend development</b> using .NET technologies, with hands-on experience in system simulation and AI projects.  
+    Besides coding, I love problem-solving and mentoring, especially through my active role in the ICPC community.  
+  </p>
+</section>
+
+
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <ul>
+    <li><b>Programming Languages:</b> Java, C++, C#, JavaScript, HTML, CSS</li>
+    <li><b>Frameworks & Tools:</b> .NET, Windows Forms, MERN Stack, Git, Visual Studio</li>
+    <li><b>Databases:</b> SQL Server</li>
+    <li><b>Concepts:</b> OOP, AI, Simulation, Backend Development, Problem Solving</li>
+    <li>Mentor & Organizer in <b>ICPC Community</b>: Trained students in competitive programming with C++.</li>
+    <li>Organized workshops and training sessions for ICPC preparation.</li>
+  </ul>
+</section>
+
+
+  <section id="experience">
+  <h2>Experience</h2>
+   <h3>.NET Training – Route Academy, Cairo (2025)</h3>
+  <ul>
+    <li>Backend development with C# and ASP.NET Core, Entity Framework, and SQL Server.</li>
+  </ul>
+
+  <h3>Flutter Training – ITI, Cairo (2025)</h3>
+  <ul>
+    <li>Mobile app development with Dart, Flutter, state management, and Firebase integration.</li>
+  </ul>
+
+  <h3>MERN Stack Training – Div Academy, Cairo (Summer 2024)</h3>
+  <ul>
+    <li>Full-stack web development using MongoDB, Express, React, and Node.js.</li>
+  </ul>
+
+  <h3>CCNA Training – IT Gate Academy, Cairo (Summer 2023)</h3>
+  <ul>
+    <li>Networking fundamentals, routing, and switching principles.</li>
+  </ul>
+</section>
+
+  <section id="projects">
+  <h2>My Projects</h2>
+  <ul>
+    <li><a href="https://github.com/Sohermohamed/Puzzle_and_Tic-Tac-Toe" target="_blank">Puzzle and Tic-Tac-Toe</a></li>
+    <li><a href="https://github.com/Sohermohamed/emotion-detection-audio" target="_blank">Emotion Detection from Audio</a></li>
+    <li><a href="https://github.com/Sohermohamed/Image-Processing" target="_blank">Image Processing Applications</a></li>
+    <li><a href="https://github.com/Sohermohamed/Paraphrase-Detection-using-Machine-Learning" target="_blank">Paraphrase Detection using Machine Learning</a></li>
+  </ul>
+</section>
+
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+
+      <label for="meeting">Meeting Date</label><br>
+      <input type="date" id="meeting" name="meeting"><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="2"></textarea><br><br>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Soher Mohamed. All rights reserved.</p>
+    <p>Connect with me on: 
+        <a href="https://github.com/Sohermohamed" target="_blank">GitHub</a> | 
+        <a href="https://www.linkedin.com/in/soher-mohamed-968510268/" target="_blank">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleTheme');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      if(body.classList.contains('light-mode')){
+        toggleBtn.textContent = "☀️";
+      } else {
+        toggleBtn.textContent = "🌙";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Simplified</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #34495e;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .box-model-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .visual-box {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .box-model {
+            position: relative;
+            height: 300px;
+            background: #e0e7ff;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .margin-layer {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px dashed #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .border-layer {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            right: 40px;
+            bottom: 40px;
+            border: 15px solid #be847e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f9e6e4;
+        }
+        
+        .content-layer {
+            width: 150px;
+            height: 150px;
+            background: #2ecc71;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .labels {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .color-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+        
+        .margin-color { background: #3498db; }
+        .border-color { background: #e74c3c; }
+        .content-color { background: #2ecc71; }
+        
+        .explanation {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .explanation h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .explanation ul {
+            list-style-type: none;
+        }
+        
+        .explanation li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .explanation li:before {
+            content: "•";
+            color: #e74c3c;
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: -3px;
+        }
+        
+        .border-styles {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+        
+        .border-styles h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        
+        .border-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .border-example {
+            padding: 20px;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .border-example div {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            font-weight: bold;
+            background: #e0e7ff;
+            color: #2c3e50;
+        }
+        
+        .solid { border: 20px solid #3498db; }
+        .dashed { border: 10px dashed #e74c3c; }
+        .dotted { border: 5px dotted #9b59b6; }
+        .double { border: 5px double #f39c12; }
+        .groove { border: 8px groove #1abc9c; }
+        .ridge { border: 8px ridge #e67e22; }
+        
+        .code {
+            font-family: 'Courier New', monospace;
+            background: #2c3e50;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .highlight {
+            background: #fff9c4;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .box-model-section {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS Box Model Simplified</h1>
+            <p class="subtitle">Every element in web design is a rectangular box. Understanding the box model is essential for creating layouts with CSS.</p>
+        </header>
+        
+        <div class="box-model-section">
+            <div class="visual-box">
+                <h2>Box Model Visualization</h2>
+                <div class="box-model">
+                    <div class="margin-layer">
+                        <div class="border-layer">
+                            <div class="content-layer">Content</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="labels">
+                    <div class="label">
+                        <div class="color-box margin-color"></div>
+                        <div>Margin (space outside the border)</div>
+                    </div>
+                    <div class="label">
+                        <div class="color-box border-color"></div>
+                        <div>Border (visible edge around padding)</div>
+                    </div>
+                    <div class="label">
+                        <div class="color-box content-color"></div>
+                        <div>Content (text, images, etc.)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="explanation">
+                <h2>Box Model Components</h2>
+                <ul>
+                    <li><span class="highlight">Content</span> - The actual content (text, images, etc.)</li>
+                    <li><span class="highlight">Padding</span> - Space between the content and border (transparent)</li>
+                    <li><span class="highlight">Border</span> - The visible edge around the padding and content</li>
+                    <li><span class="highlight">Margin</span> - Space outside the border (transparent)</li>
+                    <li>Total element width = <br>width + padding-left + padding-right + border-left + border-right</li>
+                    <li>Total element height = <br>height + padding-top + padding-bottom + border-top + border-bottom</li>
+                    <li>Margins are <span class="highlight">outside</span> the element and don't affect its size</li>
+                    <li>Use <span class="code">box-sizing: border-box</span> to include padding and border in width/height</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-styles">
+            <h2>CSS Border Styles</h2>
+            <div class="border-examples">
+                <div class="border-example">
+                    <h3>Solid</h3>
+                    <div class="solid">Solid Border</div>
+                    <div class="code">border: 5px solid #3498db;</div>
+                </div>
+                
+                <div class="border-example">
+                    <h3>Dashed</h3>
+                    <div class="dashed">Dashed Border</div>
+                    <div class="code">border: 5px dashed #e74c3c;</div>
+                </div>
+                
+                <div class="border-example">
+                    <h3>Dotted</h3>
+                    <div class="dotted">Dotted Border</div>
+                    <div class="code">border: 5px dotted #9b59b6;</div>
+                </div>
+                
+                <div class="border-example">
+                    <h3>Double</h3>
+                    <div class="double">Double Border</div>
+                    <div class="code">border: 5px double #f39c12;</div>
+                </div>
+                
+                <div class="border-example">
+                    <h3>Groove</h3>
+                    <div class="groove">Groove Border</div>
+                    <div class="code">border: 8px groove #1abc9c;</div>
+                </div>
+                
+                <div class="border-example">
+                    <h3>Ridge</h3>
+                    <div class="ridge">Ridge Border</div>
+                    <div class="code">border: 8px ridge #e67e22;</div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>CSS Box Model Simplified | Created for Educational Purposes</p>
+            <p>Understanding the box model is fundamental to CSS layout</p>
+        </footer>
+    </div>
+</body>
+</html>
